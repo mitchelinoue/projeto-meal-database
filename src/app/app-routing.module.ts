@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
+import { ListRecipeCountryComponent } from './views/list-recipe-country/list-recipe-country.component';
 import { ListRecipeIngredientComponent } from './views/list-recipe-ingredient/list-recipe-ingredient.component';
 import { ListRecipeNameComponent } from './views/list-recipe-name/list-recipe-name.component';
 
@@ -31,10 +32,12 @@ const routes: Routes = [
    path: 'list/name/:name', 
    component: ListRecipeNameComponent,
    title: 'List'
+  },
+  {
+    path: 'list/country/:country',
+    component: ListRecipeCountryComponent,
+    title: 'List'
   }
-
-  
-
 ];
 
 @NgModule({

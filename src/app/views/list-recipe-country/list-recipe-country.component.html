@@ -2,11 +2,10 @@
 <ng-container>
   <section class="container stretch">
     <div class="item">
-        <h1>Recipes using {{ ingredient }}</h1>
-        <img src="{{ imgUrl + ingredient}}.png" alt="" class="recipe-img"/>
+        <h1>{{ countryName }} recipes</h1>
       </div>
     <div class="item">
-      <div *ngFor="let meal of listMeals" class="item">
+      <div *ngFor="let meal of listRecipes" class="item">
         <img
           src="{{ meal.strMealThumb }}"
           alt=""
@@ -19,4 +18,5 @@
     </div>
   </section>
 </ng-container>
+
 

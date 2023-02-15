@@ -69,8 +69,6 @@ export class RecipeComponent implements OnInit{
         this.ingredientQnt = Object.keys(this.dataSource).filter( key => key.startsWith("strMeasure") && this.dataSource[key] != "" && this.dataSource[key] != null).map(key => this.dataSource[key])
 
         this.ingredients = Object.fromEntries(this.ingredientImg.map((_: any, i: any) => [this.ingredientImg[i], this.ingredientQnt[i]]))
-
-        console.log(this.ingredients)
         
         if (!this.apiLoaded) {
           const tag = document.createElement('script');

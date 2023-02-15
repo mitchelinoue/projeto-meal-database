@@ -10,6 +10,8 @@ export class MealService {
   private readonly byName: string = 'search.php?s='
   private readonly byId: string = 'lookup.php?i='
   private readonly byIngredient: string = 'filter.php?i='
+  private readonly byCountry: string = 'filter.php?a='
+  private readonly byLetter: string = 'search.php?f='
 
 
   constructor(
@@ -26,6 +28,14 @@ export class MealService {
 
   filterByIngredient(ingredient: string){
     return this.http.get<Meal[]>(`${this.baseUrl}${this.byIngredient}${ingredient}`)
+  }
+
+  filterByCountry(country: string){
+    return this.http.get<Meal[]>(`${this.baseUrl}${this.byCountry}${country}`)
+  }
+
+  filterByLetter(letter: string){
+    return this.http.get<Meal[]>(`${this.baseUrl}${this.byLetter}${letter}`)
   }
 
   

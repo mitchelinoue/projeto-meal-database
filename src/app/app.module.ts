@@ -13,6 +13,7 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
 import { ListRecipeIngredientComponent } from './views/list-recipe-ingredient/list-recipe-ingredient.component';
 import { FormsModule } from '@angular/forms';
 import { ListRecipeNameComponent } from './views/list-recipe-name/list-recipe-name.component';
+import { ListRecipeCountryComponent } from './views/list-recipe-country/list-recipe-country.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ListRecipeNameComponent } from './views/list-recipe-name/list-recipe-na
     RecipeComponent,
     HeaderComponent,
     ListRecipeIngredientComponent,
-    ListRecipeNameComponent
+    ListRecipeNameComponent,
+    ListRecipeCountryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,2 +1,23 @@
 <app-header></app-header>
-<p>home works!</p>
+<ng-container>
+  <section class="container stretch">
+    <div class="item">
+      <div *ngFor="let country of countryList | keyvalue" class="item">
+        <img
+          src="../../../assets/{{ country.key }}.png"
+          alt=""
+          class="ingredient-img"
+          (click)="searchByCountry(country.value)"
+        />
+        <div></div>
+      </div>
+    </div>
+    <div class="item">
+      <div *ngFor="let letter of alphaList" class="item">
+        <p (click)="searchByLetter(letter)" >{{letter}}</p>
+        <div></div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+

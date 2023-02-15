@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Meal } from 'src/app/models/meal.model';
 import { MealService } from 'src/app/services/meal.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { MealService } from 'src/app/services/meal.service';
 })
 export class ListRecipeNameComponent implements OnInit {
   public recipeName: string = '';
-  public listRecipes: any;
+  public listRecipes: Meal[] = [];
 
   constructor(
     private mealService: MealService,
