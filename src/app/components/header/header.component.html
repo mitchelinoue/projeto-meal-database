@@ -1,0 +1,22 @@
+<mat-toolbar class="mat-elevation-z8">
+    <span>Meal</span>
+    <div>
+        <mat-form-field class="search">
+            <mat-label>Search meal</mat-label>
+            <input [(ngModel)]="input" matInput type="text" (keyup.enter)="searchByName(input)">
+            <button matSuffix mat-icon-button (click)="searchByName(input)">
+              <mat-icon>search</mat-icon>
+            </button >
+          </mat-form-field>
+   
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <i class="material-icons">menu</i>
+    </button>
+    <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLink="/home">Home</a>
+        <a mat-menu-item routerLink="/books">Livros</a>
+        <a mat-menu-item routerLink="/dashboard">Painel de Controle</a>
+        <a mat-menu-item id="logout"> Sair <i class="material-icons">logout</i></a>
+    </mat-menu> 
+    </div>
+</mat-toolbar>

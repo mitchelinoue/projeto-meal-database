@@ -1,0 +1,26 @@
+<app-header></app-header>
+<ng-container>
+  <section class="container stretch">
+    <div class="item">
+        <h1>Recipes using {{ ingredient }}</h1>
+        <img src="{{ imgUrl + ingredient}}.png" alt="" class="recipe-img"/>
+      </div>
+    <div class="item">
+      <div *ngFor="let meal of listMeals" class="item">
+        <img
+          src="{{ meal.strMealThumb }}"
+          alt=""
+          class="ingredient-img"
+          routerLink="/recipe/{{meal.idMeal
+          }}"
+        />
+        <div>{{ meal.strMeal }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div *ngFor="let p of instruction" class="instruction">
+    <div>- {{ p }}</div>
+  </div> -->
+</ng-container>
+

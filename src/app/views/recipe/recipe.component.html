@@ -1,0 +1,28 @@
+<app-header></app-header>
+<ng-container>
+  <section class="container stretch">
+    <div class="item">
+      <h1>{{ name }}</h1>
+      <img src="{{ img }}" alt="" class="recipe-img"/>
+    </div>
+    <div class="item">
+      <div></div>
+      <div *ngFor="let ingredient of ingredients | keyvalue" class="item">
+        <img
+          src="{{ imgUrl + ingredient.key}}.png"
+          alt=""
+          class="ingredient-img"
+          routerLink="/list/ingredient/{{ingredient.key}}"
+        />
+        <div>{{ ingredient.value }} - {{ ingredient.key }}</div>
+      </div>
+    </div>
+  </section>
+
+  <div *ngFor="let p of instruction" class="instruction">
+    <div>- {{ p }}</div>
+  </div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <youtube-player videoId="{{ videoId }}"> </youtube-player>
+</ng-container>
