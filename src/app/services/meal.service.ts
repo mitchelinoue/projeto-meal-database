@@ -11,6 +11,7 @@ export class MealService {
   private readonly byId: string = 'lookup.php?i='
   private readonly byIngredient: string = 'filter.php?i='
   private readonly byCountry: string = 'filter.php?a='
+  private readonly byCategory: string = 'filter.php?c='
   private readonly byLetter: string = 'search.php?f='
 
 
@@ -36,6 +37,10 @@ export class MealService {
 
   filterByLetter(letter: string){
     return this.http.get<Meal[]>(`${this.baseUrl}${this.byLetter}${letter}`)
+  }
+
+  filterByCategory(category: string){
+    return this.http.get<Meal[]>(`${this.baseUrl}${this.byCategory}${category}`)
   }
 
   

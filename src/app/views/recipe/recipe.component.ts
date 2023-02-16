@@ -18,7 +18,7 @@ export class RecipeComponent implements OnInit{
   public id: string = ''
   public category : string = ''
   public area: string = ''
-  public tags: string = ''
+  public tags: string[] = []
   public video: string = ''
   public source: string = ''
   public videoId: any
@@ -30,6 +30,7 @@ export class RecipeComponent implements OnInit{
 
   public ingredientImg: string[] = []
   public ingredientQnt: string[] = []
+  public tagsNames: string[] = []
   public ingredients: {} = {}
 
   public apiLoaded = false;
@@ -59,7 +60,9 @@ export class RecipeComponent implements OnInit{
         this.id = this.dataSource.idMeal
         this.category = this.dataSource.strCategory
         this.area = this.dataSource.strArea
-        this.tags = this.dataSource.strTags
+        if(this.dataSource.strTags != null){
+          this.tags = this.dataSource.strTags.split(',')
+        }
         this.video = this.dataSource.strYoutube
         this.source = this.dataSource.strSource
         
@@ -69,6 +72,7 @@ export class RecipeComponent implements OnInit{
         this.ingredientQnt = Object.keys(this.dataSource).filter( key => key.startsWith("strMeasure") && this.dataSource[key] != "" && this.dataSource[key] != null).map(key => this.dataSource[key])
 
         this.ingredients = Object.fromEntries(this.ingredientImg.map((_: any, i: any) => [this.ingredientImg[i], this.ingredientQnt[i]]))
+        console.log(this.ingredients)
         
         if (!this.apiLoaded) {
           const tag = document.createElement('script');

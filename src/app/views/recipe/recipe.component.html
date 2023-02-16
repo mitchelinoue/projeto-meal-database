@@ -4,6 +4,11 @@
     <div class="item">
       <h1>{{ name }}</h1>
       <img src="{{ img }}" alt="" class="recipe-img"/>
+      <button routerLink="/list/country/{{category}}">{{category}}</button>
+      <div *ngFor="let tag of tags">
+        <div>{{tag}}</div>
+      </div>
+      
     </div>
     <div class="item">
       <div></div>
@@ -12,7 +17,7 @@
           src="{{ imgUrl + ingredient.key}}.png"
           alt=""
           class="ingredient-img"
-          routerLink="/list/ingredient/{{ingredient.key}}"
+          routerLink="/list/country/{{ingredient.key}}"
         />
         <div>{{ ingredient.value }} - {{ ingredient.key }}</div>
       </div>

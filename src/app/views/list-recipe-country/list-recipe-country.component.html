@@ -2,21 +2,21 @@
 <ng-container>
   <section class="container stretch">
     <div class="item">
-        <h1>{{ countryName }} recipes</h1>
-      </div>
+      <h1 *ngIf="isIngredient || isCountry || isCategory">{{ urlName }} recipes</h1>
+      <h1 *ngIf="isLetter">Recipes with the letter {{ urlName }}</h1>
+      <img src="{{ imgUrl + urlName }}.png" alt="" class="recipe-img" *ngIf="isIngredient"/>
+      <img src="../../../assets/{{ countryFlag }}.png" alt="" class="flag-img" *ngIf="isCountry"/>
+    </div>
     <div class="item">
       <div *ngFor="let meal of listRecipes" class="item">
         <img
           src="{{ meal.strMealThumb }}"
           alt=""
           class="ingredient-img"
-          routerLink="/recipe/{{meal.idMeal
-          }}"
+          routerLink="/recipe/{{ meal.idMeal }}"
         />
         <div>{{ meal.strMeal }}</div>
       </div>
     </div>
   </section>
 </ng-container>
-
-
